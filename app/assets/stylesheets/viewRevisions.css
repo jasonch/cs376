@@ -1,0 +1,16 @@
+.revTable {
+  display: inline-block;
+}
+
+.revRow {
+
+}
+.revRow:hover {
+  background: #ccccff;
+}
+
+.revRow img {
+  margin: 5px 10px;
+  padding: 2px;
+  border: 2px black solid;
+}

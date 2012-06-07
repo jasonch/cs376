@@ -103,5 +103,5 @@
 </div>
 <div class='actionPane'>
 <%= button_to_function "Commit", 'commit();', :id=>'commitBtn', :class => 'option' %> 
-<%= button_to_function "Timeline", 'viewTimeline("'+url_for(:action=>'viewTree') + '");', :id=>'timelineBtn', :class => 'option' %> 
+<%= button_to_function "Revisions", 'viewTimeline("'+url_for(:action=>'viewRevisions') + '");', :id=>'timelineBtn', :class => 'option' %> 
 </div>

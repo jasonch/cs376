@@ -77,7 +77,8 @@ class EditorController < ApplicationController
     @revision = rev 
     @user.save
 
-    flash[:notice] = "Commit successful"
+    #flash[:notice] = "Commit successful"
+    @message = "Commit successful"
     respond_to do |format| 
             format.js { render :layout => false }
     end 
@@ -112,6 +113,13 @@ class EditorController < ApplicationController
   def getLayersByRevision
     respond_to do |format|
             format.js {render :layout => false, :text => Revision.find(params[:revId]).layers.to_json}
+    end
+  end
+
+
+  def viewRevisions
+    @revisions = Revision.find(:all, :conditions => {:user_id => @user.id}).each do |rev|
+            rev.filepath = rev.layers.select{|l| l.name == 'thumb'}[0].filepath
     end
   end
 

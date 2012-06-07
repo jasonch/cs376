@@ -78,6 +78,10 @@ function changeTool(tool) {
 
 function commit() {
   // copy all layers onto backCanvas to create thumbnail
+  if ($('#revTitle').val() == "") {
+          alert("You must enter a title");
+          return;
+  }
   console.log('commit');
   $('#commitBtn')[0].disabled = 'disabled';
 

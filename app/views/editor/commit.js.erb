@@ -1,6 +1,6 @@
-<% if flash[:error].nil? %>
-       $('#message').html("<%= flash[:notice] %>");
+<% if !@message.nil? %>
+        $('#message').html("<%= @message %>");
 <% else %>
-        $('#message').html("<%= flash[:error] %>");
+        $('#message').html("An error occurred while commiting, please try again");
 <% end %>
 setTimeout(function() { $('#message').html(""); }, 5000);

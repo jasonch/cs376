@@ -1,0 +1,6 @@
+<div class='revTable'>
+<% @revisions.each do |rev| %>
+        <div class='revRow'><%= link_to (raw "<span>#{rev.title}</span>#{image_tag(rev.filepath, :size => "100x75")}"),  :action=> 'index', :id => rev.id %></div>
+<% end %>
+</div>
+<div/>
